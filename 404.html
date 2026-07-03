@@ -22,15 +22,21 @@
         --accent-soft: #8dd1c6;
       }
 
-      * { box-sizing: border-box; }
+      * {
+        box-sizing: border-box;
+      }
 
       body {
         margin: 0;
         min-height: 100vh;
-        font-family: 'Lato', Arial, sans-serif;
+        font-family: "Lato", Arial, sans-serif;
         color: var(--text);
         background:
-          radial-gradient(circle at top left, rgba(141, 209, 198, 0.3), transparent 28%),
+          radial-gradient(
+            circle at top left,
+            rgba(141, 209, 198, 0.3),
+            transparent 28%
+          ),
           linear-gradient(135deg, #f8f3eb 0%, var(--bg) 48%, #eee4d7 100%);
         display: grid;
         place-items: center;
@@ -64,7 +70,7 @@
       }
 
       h1 {
-        font-family: 'Montserrat', Arial, sans-serif;
+        font-family: "Montserrat", Arial, sans-serif;
         font-size: clamp(2rem, 4vw, 3rem);
         line-height: 1.08;
         margin: 0 0 0.75rem;
@@ -101,19 +107,31 @@
       }
 
       @media (max-width: 640px) {
-        .card { padding: 1.4rem; }
-        .brand-mark { width: 96px; height: 96px; }
+        .card {
+          padding: 1.4rem;
+        }
+        .brand-mark {
+          width: 96px;
+          height: 96px;
+        }
       }
     </style>
   </head>
   <body>
     <main class="card">
       <section class="hero">
-        <img class="brand-mark" src="/assets/bamm-logo.svg" alt="BAMM Digital logo" />
+        <img
+          class="brand-mark"
+          src="/assets/bamm-logo.svg"
+          alt="BAMM Digital logo"
+        />
         <div>
           <p class="eyebrow">BAMM Digital</p>
           <h1>Process improvement. Digital transformation.</h1>
-          <p>We help teams simplify operations, modernize systems, and create more thoughtful digital experiences.</p>
+          <p>
+            We help teams simplify operations, modernize systems, and create
+            more thoughtful digital experiences.
+          </p>
           <a class="button" href="mailto:hello@bammdigital.com">Let’s talk</a>
         </div>
       </section>
