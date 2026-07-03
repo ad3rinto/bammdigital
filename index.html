@@ -251,6 +251,44 @@
         font-size: 0.9rem;
       }
 
+      .about {
+        margin-top: 28px;
+        padding: 24px;
+        border-radius: 24px;
+        border: 1px solid rgba(15, 23, 42, 0.08);
+        background: rgba(255, 252, 247, 0.9);
+      }
+
+      .about h2 {
+        margin: 0 0 8px;
+        font-family: "Montserrat", Arial, sans-serif;
+        font-size: 1.25rem;
+      }
+
+      .about p {
+        margin: 0 0 12px;
+        color: var(--muted);
+        line-height: 1.75;
+      }
+
+      .about-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        margin-top: 12px;
+      }
+
+      .about-list div {
+        padding: 12px 14px;
+        border-radius: 16px;
+        background: var(--surface-soft);
+      }
+
+      .about-list strong {
+        display: block;
+        margin-bottom: 4px;
+      }
+
       .services {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -320,10 +358,8 @@
           <span>BAMM Digital</span>
         </a>
         <nav class="nav-links" aria-label="Primary">
-          <a href="mailto:hello@bammdigital.com">Contact</a>
-          <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer"
-            >LinkedIn</a
-          >
+          <a href="mailto:hello@bammdigital.co.uk">Contact</a>
+          <a href="#about-us">About us</a>
         </nav>
       </header>
 
@@ -337,16 +373,10 @@
             from day one.
           </p>
           <div class="actions">
-            <a class="button primary" href="mailto:hello@bammdigital.com"
+            <a class="button primary" href="mailto:hello@bammdigital.co.uk"
               >Let’s talk</a
             >
-            <a
-              class="button secondary"
-              href="https://www.linkedin.com/"
-              target="_blank"
-              rel="noreferrer"
-              >View profile</a
-            >
+            <a class="button secondary" href="#about-us">About us</a>
           </div>
         </div>
 
@@ -374,6 +404,37 @@
             </div>
           </div>
         </aside>
+      </section>
+
+      <section class="about" id="about-us" aria-labelledby="about-title">
+        <h2 id="about-title">About BAMM Digital</h2>
+        <p>
+          BAMM Digital is a boutique consultancy focused on helping
+          organizations simplify complex operations and turn ideas into
+          practical digital progress.
+        </p>
+        <p>
+          We combine process thinking, clear strategy, and thoughtful execution
+          to make transformation feel structured, measurable, and sustainable.
+        </p>
+        <div class="about-list">
+          <div>
+            <strong>What we do</strong>
+            <span>Improve workflows, systems, and day-to-day delivery.</span>
+          </div>
+          <div>
+            <strong>How we work</strong>
+            <span>Blend strategy, clarity, and hands-on implementation.</span>
+          </div>
+          <div>
+            <strong>Who we support</strong>
+            <span>Leaders and teams navigating growth and change.</span>
+          </div>
+          <div>
+            <strong>Our focus</strong>
+            <span>Make transformation practical, calm, and effective.</span>
+          </div>
+        </div>
       </section>
 
       <section class="services" aria-label="Services">
