@@ -4,36 +4,48 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BAMM Digital</title>
-    <meta name="description" content="BAMM Digital helps teams simplify processes and deliver smarter digital transformation." />
+    <meta
+      name="description"
+      content="BAMM Digital helps teams simplify operations, modernize systems, and deliver thoughtful digital transformation."
+    />
     <link rel="icon" type="image/svg+xml" href="/assets/bamm-logo.svg" />
     <link rel="shortcut icon" href="/assets/bamm-logo.svg" />
     <style>
       :root {
         color-scheme: light;
-        --bg: #f6f5f2;
-        --surface: #ffffff;
-        --text: #111827;
-        --muted: #4b5563;
+        --bg: #f4efe8;
+        --surface: #fffcf7;
+        --surface-soft: #f7efe2;
+        --text: #121826;
+        --muted: #5b6470;
         --accent: #0f172a;
+        --accent-soft: #8dd1c6;
       }
+
       * { box-sizing: border-box; }
+
       body {
         margin: 0;
-        font-family: 'Lato', Arial, sans-serif;
-        background: linear-gradient(135deg, var(--bg), #ecebe7);
-        color: var(--text);
         min-height: 100vh;
+        font-family: 'Lato', Arial, sans-serif;
+        color: var(--text);
+        background:
+          radial-gradient(circle at top left, rgba(141, 209, 198, 0.3), transparent 28%),
+          linear-gradient(135deg, #f8f3eb 0%, var(--bg) 48%, #eee4d7 100%);
         display: grid;
         place-items: center;
       }
+
       .card {
         width: min(92vw, 860px);
-        background: var(--surface);
-        border: 1px solid rgba(15, 23, 42, 0.08);
-        border-radius: 24px;
         padding: 2.25rem;
-        box-shadow: 0 24px 60px rgba(15, 23, 42, 0.08);
+        border-radius: 28px;
+        border: 1px solid rgba(15, 23, 42, 0.08);
+        background: rgba(255, 252, 247, 0.94);
+        box-shadow: 0 24px 70px rgba(15, 23, 42, 0.08);
+        backdrop-filter: blur(14px);
       }
+
       .hero {
         display: flex;
         gap: 2rem;
@@ -41,35 +53,56 @@
         justify-content: space-between;
         flex-wrap: wrap;
       }
+
       .brand-mark {
         width: 128px;
         height: 128px;
         flex-shrink: 0;
+        padding: 10px;
+        border-radius: 24px;
+        background: var(--accent);
       }
+
       h1 {
         font-family: 'Montserrat', Arial, sans-serif;
         font-size: clamp(2rem, 4vw, 3rem);
-        line-height: 1.1;
+        line-height: 1.08;
         margin: 0 0 0.75rem;
       }
-      p { margin: 0; color: var(--muted); font-size: 1.05rem; line-height: 1.7; }
-      .eyebrow {
-        text-transform: uppercase;
-        letter-spacing: 0.22em;
-        font-size: 0.72rem;
-        font-weight: 700;
-        color: var(--accent);
-        margin-bottom: 0.5rem;
+
+      p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 1.05rem;
+        line-height: 1.7;
       }
-      a.button {
-        display: inline-block;
+
+      .eyebrow {
+        margin-bottom: 0.5rem;
+        color: var(--accent);
+        font-size: 0.76rem;
+        font-weight: 800;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
         margin-top: 1.2rem;
-        padding: 0.8rem 1.1rem;
+        padding: 0.84rem 1.1rem;
         border-radius: 999px;
         text-decoration: none;
         background: var(--accent);
         color: white;
         font-weight: 700;
+        box-shadow: 0 10px 24px rgba(15, 23, 42, 0.14);
+      }
+
+      @media (max-width: 640px) {
+        .card { padding: 1.4rem; }
+        .brand-mark { width: 96px; height: 96px; }
       }
     </style>
   </head>

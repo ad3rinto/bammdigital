@@ -4,103 +4,326 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BAMM Digital</title>
-    <meta name="description" content="BAMM Digital helps teams simplify processes and deliver smarter digital transformation." />
+    <meta
+      name="description"
+      content="BAMM Digital helps teams simplify operations, modernize systems, and deliver thoughtful digital transformation."
+    />
     <link rel="icon" type="image/svg+xml" href="/assets/bamm-logo.svg" />
     <link rel="shortcut icon" href="/assets/bamm-logo.svg" />
     <style>
       :root {
         color-scheme: light;
-        --bg: #f6f5f2;
-        --surface: #ffffff;
-        --text: #111827;
-        --muted: #4b5563;
+        --bg: #f4efe8;
+        --surface: #fffcf7;
+        --surface-soft: #f7efe2;
+        --text: #121826;
+        --muted: #5b6470;
         --accent: #0f172a;
-        --accent-soft: #5eead4;
+        --accent-soft: #8dd1c6;
       }
+
       * { box-sizing: border-box; }
+
       body {
         margin: 0;
-        font-family: 'Lato', Arial, sans-serif;
-        background: linear-gradient(135deg, var(--bg), #ecebe7);
-        color: var(--text);
         min-height: 100vh;
-        display: grid;
-        place-items: center;
+        font-family: 'Lato', Arial, sans-serif;
+        color: var(--text);
+        background:
+          radial-gradient(circle at top left, rgba(141, 209, 198, 0.3), transparent 28%),
+          linear-gradient(135deg, #f8f3eb 0%, var(--bg) 48%, #eee4d7 100%);
       }
-      .card {
-        width: min(92vw, 860px);
-        background: var(--surface);
-        border: 1px solid rgba(15, 23, 42, 0.08);
-        border-radius: 24px;
-        padding: 2.25rem;
-        box-shadow: 0 24px 60px rgba(15, 23, 42, 0.08);
-      }
-      .hero {
-        display: flex;
-        gap: 2rem;
-        align-items: center;
-        justify-content: space-between;
-        flex-wrap: wrap;
-      }
-      .brand-mark {
-        width: 128px;
-        height: 128px;
-        flex-shrink: 0;
-      }
-      h1 {
-        font-family: 'Montserrat', Arial, sans-serif;
-        font-size: clamp(2rem, 4vw, 3rem);
-        line-height: 1.1;
-        margin: 0 0 0.75rem;
-      }
-      p { margin: 0; color: var(--muted); font-size: 1.05rem; line-height: 1.7; }
-      .eyebrow {
-        text-transform: uppercase;
-        letter-spacing: 0.22em;
-        font-size: 0.72rem;
-        font-weight: 700;
-        color: var(--accent);
-        margin-bottom: 0.5rem;
-      }
-      .actions {
-        margin-top: 1.4rem;
-        display: flex;
-        gap: 0.75rem;
-        flex-wrap: wrap;
-      }
-      a.button {
-        display: inline-block;
-        padding: 0.8rem 1.1rem;
+
+      body::before,
+      body::after {
+        content: '';
+        position: fixed;
         border-radius: 999px;
-        text-decoration: none;
+        pointer-events: none;
+        filter: blur(2px);
+      }
+
+      body::before {
+        width: 280px;
+        height: 280px;
+        background: rgba(141, 209, 198, 0.16);
+        top: -90px;
+        right: -80px;
+      }
+
+      body::after {
+        width: 220px;
+        height: 220px;
+        background: rgba(15, 23, 42, 0.05);
+        bottom: -80px;
+        left: -60px;
+      }
+
+      a { color: inherit; text-decoration: none; }
+
+      .site {
+        max-width: 1160px;
+        margin: 0 auto;
+        padding: 24px 24px 48px;
+      }
+
+      .nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 0 26px;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        font-family: 'Montserrat', Arial, sans-serif;
+        font-size: 0.9rem;
+        font-weight: 800;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      .brand-mark {
+        display: block;
+        width: 44px;
+        height: 44px;
+        padding: 6px;
+        border-radius: 14px;
+        background: var(--accent);
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 18px;
+        color: var(--muted);
+        font-size: 0.95rem;
+        font-weight: 600;
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 28px;
+        align-items: center;
+      }
+
+      .copy {
+        max-width: 620px;
+      }
+
+      .eyebrow {
+        margin: 0 0 10px;
+        color: var(--accent);
+        font-size: 0.76rem;
+        font-weight: 800;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 0 0 14px;
+        font-family: 'Montserrat', Arial, sans-serif;
+        font-size: clamp(2.2rem, 4.2vw, 3.4rem);
+        line-height: 1.08;
+      }
+
+      .lead {
+        margin: 0;
+        color: var(--muted);
+        font-size: 1.06rem;
+        line-height: 1.8;
+      }
+
+      .actions {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-top: 24px;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.84rem 1.1rem;
+        border-radius: 999px;
+        font-weight: 700;
+        transition: transform 180ms ease, box-shadow 180ms ease;
+      }
+
+      .button:hover { transform: translateY(-1px); }
+
+      .button.primary {
         background: var(--accent);
         color: white;
-        font-weight: 700;
+        box-shadow: 0 10px 24px rgba(15, 23, 42, 0.14);
       }
-      a.button.secondary {
+
+      .button.secondary {
         background: transparent;
         color: var(--accent);
-        border: 1px solid rgba(15, 23, 42, 0.14);
+        border: 1px solid rgba(15, 23, 42, 0.12);
       }
+
+      .panel {
+        padding: 24px;
+        border-radius: 28px;
+        border: 1px solid rgba(15, 23, 42, 0.08);
+        background: rgba(255, 252, 247, 0.94);
+        box-shadow: 0 24px 70px rgba(15, 23, 42, 0.08);
+        backdrop-filter: blur(14px);
+      }
+
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.42rem 0.7rem;
+        border-radius: 999px;
+        background: var(--surface-soft);
+        color: var(--accent);
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .logo-stack {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-top: 18px;
+      }
+
+      .logo-card {
+        flex: 1;
+        padding: 18px;
+        border-radius: 20px;
+        background: linear-gradient(135deg, var(--accent) 0%, #182338 100%);
+        color: white;
+      }
+
+      .logo-card strong { display: block; font-size: 1rem; margin-bottom: 6px; }
+      .logo-card span { display: block; font-size: 0.92rem; opacity: 0.82; }
+
+      .panel-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin-top: 16px;
+      }
+
+      .stat-card {
+        padding: 14px;
+        border-radius: 16px;
+        background: var(--surface-soft);
+      }
+
+      .stat-card strong { display: block; font-size: 1.05rem; margin-bottom: 4px; }
+      .stat-card span { color: var(--muted); font-size: 0.9rem; }
+
+      .services {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+        margin-top: 24px;
+      }
+
+      .service-card {
+        padding: 16px;
+        border-radius: 18px;
+        background: rgba(255, 252, 247, 0.82);
+        border: 1px solid rgba(15, 23, 42, 0.06);
+      }
+
+      .service-card h3 {
+        margin: 0 0 6px;
+        font-size: 0.98rem;
+      }
+
+      .service-card p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.92rem;
+        line-height: 1.6;
+      }
+
+      @media (max-width: 860px) {
+        .hero { grid-template-columns: 1fr; }
+        .services { grid-template-columns: 1fr; }
+      }
+
       @media (max-width: 640px) {
-        .card { padding: 1.4rem; }
-        .brand-mark { width: 96px; height: 96px; }
+        .site { padding: 18px 16px 32px; }
+        .nav { flex-direction: column; align-items: flex-start; gap: 10px; }
+        .nav-links { gap: 12px; flex-wrap: wrap; }
+        .panel { padding: 18px; }
+        .panel-grid { grid-template-columns: 1fr; }
       }
     </style>
   </head>
   <body>
-    <main class="card">
+    <main class="site">
+      <header class="nav">
+        <a class="brand" href="/">
+          <img class="brand-mark" src="/assets/bamm-logo.svg" alt="BAMM Digital logo" />
+          <span>BAMM Digital</span>
+        </a>
+        <nav class="nav-links" aria-label="Primary">
+          <a href="mailto:hello@bammdigital.com">Contact</a>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
+        </nav>
+      </header>
+
       <section class="hero">
-        <img class="brand-mark" src="/assets/bamm-logo.svg" alt="BAMM Digital logo" />
-        <div>
-          <p class="eyebrow">BAMM Digital</p>
-          <h1>Process improvement. Digital transformation.</h1>
-          <p>We help teams simplify operations, modernize systems, and create more thoughtful digital experiences.</p>
+        <div class="copy">
+          <p class="eyebrow">Process improvement • Digital transformation</p>
+          <h1>Clarity, momentum, and modern delivery for ambitious teams.</h1>
+          <p class="lead">
+            We help organizations simplify operations, improve the way work flows, and create thoughtful digital experiences that are practical from day one.
+          </p>
           <div class="actions">
-            <a class="button" href="mailto:hello@bammdigital.com">Let’s talk</a>
+            <a class="button primary" href="mailto:hello@bammdigital.com">Let’s talk</a>
             <a class="button secondary" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">View profile</a>
           </div>
         </div>
+
+        <aside class="panel" aria-label="Company overview">
+          <span class="pill">Strategy-led delivery</span>
+          <div class="logo-stack">
+            <img class="brand-mark" src="/assets/bamm-logo.svg" alt="BAMM Digital logo" />
+            <div class="logo-card">
+              <strong>Thoughtful execution</strong>
+              <span>From process design to digital enablement.</span>
+            </div>
+          </div>
+          <div class="panel-grid">
+            <div class="stat-card">
+              <strong>Process</strong>
+              <span>Streamline how teams work.</span>
+            </div>
+            <div class="stat-card">
+              <strong>Technology</strong>
+              <span>Build practical digital solutions.</span>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="services" aria-label="Services">
+        <article class="service-card">
+          <h3>Operational clarity</h3>
+          <p>Bring focus to complexity with better systems, workflows, and decision-making.</p>
+        </article>
+        <article class="service-card">
+          <h3>Digital enablement</h3>
+          <p>Modernize the essentials so teams can move faster with confidence.</p>
+        </article>
+        <article class="service-card">
+          <h3>Thoughtful growth</h3>
+          <p>Design scalable experiences that support long-term transformation.</p>
+        </article>
       </section>
     </main>
   </body>
